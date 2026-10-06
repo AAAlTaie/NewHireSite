@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IBC New Hire Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#17203a;--mute:#5b6480;--navy:#0f2a66;--wine:#8a3b3f;--line:#dde1ee;--ok:#1d7a4d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--card:#171f36;--ink:#e8ebf5;--mute:#9aa3bf;--navy:#8fb0ff;--wine:#e08a8f;--line:#2a3452;--ok:#5fd29a}}
+:root[data-theme="dark"]{--bg:#0e1424;--card:#171f36;--ink:#e8ebf5;--mute:#9aa3bf;--navy:#8fb0ff;--wine:#e08a8f;--line:#2a3452;--ok:#5fd29a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--navy);color:#fff;padding:28px 20px 20px}
+:root[data-theme="dark"] header,:root:not([data-theme="light"]) header{}
+header h1{margin:0;font-size:1.7rem;font-weight:800;letter-spacing:-.01em}
+header p{margin:6px 0 0;opacity:.85;max-width:60ch}
+.bar{height:8px;background:rgba(255,255,255,.25);border-radius:4px;margin-top:16px;max-width:420px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#fff;transition:width .3s}
+#pt{font-size:.85rem;margin-top:6px;opacity:.9}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:0 12px;z-index:5}
+nav button{background:none;border:0;border-bottom:3px solid transparent;padding:13px 12px;font:600 .95rem inherit;font-family:inherit;color:var(--mute);cursor:pointer;white-space:nowrap}
+nav button[aria-selected=true]{color:var(--wine);border-color:var(--wine)}
+nav button:focus-visible,summary:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--wine);outline-offset:2px}
+main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+section{display:none}section.on{display:block}
+h2{font-size:1.25rem;margin:26px 0 10px;color:var(--navy)}h2:first-child{margin-top:0}
+h3{font-size:1rem;margin:16px 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+.card.k{border-left:5px solid var(--wine)}
+.mute{color:var(--mute);font-size:.9rem}
+a{color:var(--navy);font-weight:600;word-break:break-all}
+ul{padding-left:20px;margin:6px 0}li{margin:3px 0}
+.ck{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.ck:first-of-type{border-top:0}
+.ck input{width:22px;height:22px;margin-top:2px;accent-color:var(--ok);flex:none}
+.ck label{flex:1;cursor:pointer}.ck input:checked+label{color:var(--mute);text-decoration:line-through}
+.ck small{display:block;color:var(--mute);text-decoration:none}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;background:var(--line);border-radius:99px;padding:1px 9px;margin-left:6px;color:var(--ink)}
+.sc{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff}
+:root[data-theme="dark"] th{color:#0e1424}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) th{color:#0e1424}}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;padding:0 16px}
+summary{cursor:pointer;font-weight:600;padding:12px 0;color:var(--navy)}
+details[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px}
+details>*:last-child{margin-bottom:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:600px){.two{grid-template-columns:1fr}}
+.reset{background:none;border:1px solid var(--line);color:var(--mute);border-radius:8px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer;margin-top:14px}
+</style></head><body>
+<header>
+<h1>International Business Concepts<br>New Hire Hub</h1>
+<p>Everything you need in your first weeks, in one place. Start with the checklist and work top to bottom. Stuck? Reach out to your Team Leader.</p>
+<div class="bar" aria-hidden="true"><i id="pb"></i></div><div id="pt"></div>
+</header>
+<nav role="tablist">
+<button role="tab" aria-selected="true" data-t="t1">Checklist</button>
+<button role="tab" aria-selected="false" data-t="t2">Schedule &amp; standards</button>
+<button role="tab" aria-selected="false" data-t="t3">Pay</button>
+<button role="tab" aria-selected="false" data-t="t4">Sales playbook</button>
+<button role="tab" aria-selected="false" data-t="t5">Quick reference</button>
+</nav>
+<main>
+
+<section id="t1" class="on">
+<div class="card k"><strong>What comes next:</strong> Zoom training runs Tuesday and Wednesday at 1:00 pm, same link both days.<br>
+<a href="https://zoom.us/j/99603611756" target="_blank" rel="noopener">Join Zoom training</a></div>
+
+<h2>Complete these in order</h2>
+<div class="card" id="cl"></div>
+<button class="reset" id="rs">Clear my checklist</button>
+
+<h2>Links</h2>
+<div class="card">
+<p><strong>Zoom training</strong> (Tue &amp; Wed, 1 pm)<br><a href="https://zoom.us/j/99603611756" target="_blank" rel="noopener">zoom.us/j/99603611756</a></p>
+<p><strong>Best Buy training videos</strong> (link arrives Tuesday 3–4 pm)<br><a href="https://vendor.bbylearningnetwork.com/auth/" target="_blank" rel="noopener">vendor.bbylearningnetwork.com</a></p>
+</div>
+</section>
+
+<section id="t2">
+<h2>Weekly schedule</h2>
+<div class="sc"><table>
+<tr><th>Day</th><th>Target / Walmart</th><th>Costco</th></tr>
+<tr><td>Sun</td><td>10 am – 7 pm</td><td>8:45 am – 6 pm</td></tr>
+<tr><td>Mon</td><td>10 am – 7 pm</td><td>8:45 am – 4 pm or 12:30 – 8:30 pm</td></tr>
+<tr><td>Tue</td><td colspan="2">OFF</td></tr>
+<tr><td>Wed</td><td colspan="2">OFF</td></tr>
+<tr><td>Thu</td><td>10 am – 7 pm</td><td>8:45 am – 4 pm or 12:30 – 8:30 pm</td></tr>
+<tr><td>Fri</td><td>10 am – 7 pm</td><td>8:45 am – 4 pm or 12:30 – 8:30 pm</td></tr>
+<tr><td>Sat</td><td>10 am – 7 pm</td><td>8:45 am – 7 pm</td></tr>
+</table></div>
+<div class="card"><ul>
+<li>Schedules post every Saturday (events through Wednesday). The rest of the week posts each Tuesday.</li>
+<li>Different days off may have been agreed in your interview and will be honored.</li>
+<li>Time off: request at least <strong>two weeks</strong> ahead.</li>
+<li>Sick: notify an Assistant Manager at least <strong>3 hours before</strong> your shift. A doctor's note is required. Make-up days may be scheduled on your days off the following week.</li>
+</ul></div>
+
+<h2>5 Core Standards of Excellence</h2>
+<div class="two">
+<div class="card"><strong>Performance</strong><ul><li>Hit daily LOA goals</li><li>Follow a structured training routine</li><li>Meet or exceed performance standards</li></ul></div>
+<div class="card"><strong>Attitude</strong><ul><li>Positive, proactive mindset</li><li>Speak only positivity</li><li>Operate from abundance</li></ul></div>
+<div class="card"><strong>Energy</strong><ul><li>Smile and strong presence</li><li>Bring BEAST energy</li><li>Be engaged in meetings</li><li>Be active in GroupMe</li><li>Have fun</li></ul></div>
+<div class="card"><strong>Attendance</strong><ul><li>On time, every time</li><li>Five full days a week</li><li>Show up to team nights and events</li></ul></div>
+</div>
+<div class="card"><strong>Image</strong><ul><li>Invest in professional business attire</li><li>Carry yourself with confidence</li><li>Lead by example</li><li>Be the expert clients and team rely on</li></ul></div>
+
+<h2>Dress code</h2>
+<div class="two">
+<div class="card"><strong>Wear</strong><ul>
+<li>Closed-toe shoes (mules and sling-backs are fine)</li>
+<li>Dress pants or business slacks</li>
+<li>Official client polo (or button-up), tucked in</li>
+<li>Black or white long sleeve underneath, if desired</li>
+<li>Badge visible at all times</li></ul></div>
+<div class="card"><strong>Do not wear or use</strong><ul>
+<li>Sandals, flip-flops, sneakers, tennis shoes, hiking boots</li>
+<li>Jeans, skirts, leggings, jeggings, yoga pants</li>
+<li>Jackets or outerwear over the polo</li>
+<li>Facial piercings, hats, sunglasses</li>
+<li>Bluetooth devices or earbuds</li>
+<li>Gum</li></ul></div>
+</div>
+</section>
+
+<section id="t3">
+<h2>How you're paid</h2>
+<div class="card k">Base pay + commission = your salary. Your commission percentage rises with your weekly production.</div>
+<div class="sc"><table>
+<tr><th>Production</th><th>Pay</th></tr>
+<tr><td>$0 – $299</td><td>Base $400</td></tr>
+<tr><td>$300 – $600</td><td>Base + 30% commission</td></tr>
+<tr><td>$700 – $999</td><td>Base + 40% commission</td></tr>
+<tr><td>$1,000 and above</td><td>Base + 50% commission</td></tr>
+</table></div>
+<h3>Examples</h3>
+<ul><li>$230 production: $400 + $0 = <strong>$400</strong></li>
+<li>$405 production: $405 × .30 = $121.50, + $400 = <strong>$521.50</strong></li>
+<li>$758 production: $758 × .40 = $303.20, + $400 = <strong>$703.20</strong></li>
+<li>$1,300 production: $1,300 × .50 = $650, + $400 = <strong>$1,050</strong></li></ul>
+<p class="mute">Once you start team building and reach Sales Leader, you may stay on this structure or move to 100% commission.</p>
+
+<h2>Production value by sale</h2>
+<div class="sc"><table>
+<tr><th>Item</th><th>Value</th></tr>
+<tr><td>Starter</td><td>$50</td></tr><tr><td>Premium</td><td>$60</td></tr><tr><td>Extra</td><td>$60</td></tr>
+<tr><td>BYOD</td><td>$35</td></tr><tr><td>Next Up (per line)</td><td>$10</td></tr>
+<tr><td>Insurance (per line)</td><td>$5</td></tr><tr><td>Family insurance</td><td>$15</td></tr>
+<tr><td>Watch</td><td>$15</td></tr><tr><td>iPad</td><td>$15</td></tr>
+<tr><td>Internet 300 Mbps</td><td>$125</td></tr><tr><td>Internet 500 Mbps</td><td>$135</td></tr><tr><td>Internet 1 Gig</td><td>$165</td></tr>
+</table></div>
+
+<h2>Goals sheet</h2>
+<div class="card">Complete your Goals Sheet with your Team Leader: Personal, Professional, and 1:1 goals, plus Financial goals (bills, breakeven, savings).</div>
+</section>
+
+<section id="t4">
+<p class="mute">Learn these steps and phrases. Memorizing them matters as much as memorizing the 5 steps.</p>
+<h2>5 steps to a conversation</h2>
+<details open><summary>Step 1: Introduction</summary>
+<p>Break the ice and build rapport with your <strong>BEAST</strong> factors: Body language, Eye contact, Awesome attitude, Smile, Tonality/timing.</p>
+<ul><li>Smile with open body language, like greeting a friend.</li><li>Open with a genuine compliment: "Hey, how are you doing, sir/ma'am?" "Cool shirt!"</li><li>Use your outside voice, especially in loud stores like Costco.</li><li>Turn &amp; Burn: grab your board and approach swiftly.</li></ul></details>
+<details><summary>Step 2: Short story (the 1st 5s)</summary>
+<p>Explain why you're there and what you're doing to reduce skepticism and uncover needs.</p>
+<ul><li>Who is your cell phone provider? (Power word: "Perfect!")</li><li>How many lines do you have with them?</li><li>What kinds of phones?</li><li>How much are you paying?</li><li>Is anyone in the household a teacher, nurse, military, or first responder?</li><li>4.5: Since the T-Mobile merge with Sprint/Boost/Metro, have you experienced dropped calls?</li><li>5: What has (provider) done to help you with (pain bucket)?</li></ul>
+<p>Four pain buckets: <strong>Phones, Data, Coverage, Price.</strong> Use CPR (create personal relationships) with FORDS topics: Family, Occupation, Recreation, Dreams, School/Sports.</p></details>
+<details><summary>Step 3: Presentation (the 2nd 5s)</summary>
+<ul><li>Unlimited with 5G access, AT&amp;T as the #1 carrier</li><li>Compare their equipment to what you will provide (use tonality)</li><li>Pain buckets and perks: premium data, 5G+ coverage, hotspot</li><li>Rehash, then price: review everything discussed, then tag it with the price</li><li>Value statement: "I'm assuming this is going to be of value to you."</li></ul>
+<p>After the second value statement, go straight for your iPad. If they follow, you have built enough impulse.</p></details>
+<details><summary>Step 4: Hard close (the 3rd 5s)</summary>
+<ul><li><strong>Turn and Burn:</strong> start the credit application. "All I need is your driver's license to see if you qualify."</li><li><strong>Tester question:</strong> phone color, type of phones, "keep the same number, right?"</li><li><strong>Hard close:</strong> "Let's do it." Assume the sale.</li><li><strong>Pre-empt:</strong> tell them the next step. People don't mind negatives, they hate surprises.</li><li><strong>Rehash:</strong> bill breakdown. Great time for referrals.</li></ul>
+<p class="mute">While processing, stick to CPR and FORDS, not product talk. Ask the customer to pull up their current account number and PIN. Tell them what you need rather than asking if they're ready.</p></details>
+<details><summary>Step 5: Rehash and set expectations</summary>
+<p>Set expectations <strong>only after</strong> the customer accepts the terms and conditions.</p>
+<ul><li>All promotions take 3 billing cycles to apply. Trade-in credit requires returning the old device.</li>
+<li><strong>1st bill:</strong> $30 activation per line, month of service, and normal phone finance charge per line.</li>
+<li><strong>2nd bill:</strong> month of service and normal finance charge.</li>
+<li><strong>3rd bill:</strong> credits for 3 months of device payments (if the phone was sent back right away), so it will be much lower and hard to predict.</li>
+<li><strong>4th bill:</strong> should be normal, possibly lower from credits.</li>
+<li><strong>5th bill:</strong> the price quoted in store.</li></ul></details>
+
+<h2>Objections</h2>
+<div class="card k">Objections are good. People usually object because they're confused. Never panic.<br><strong>Early</strong> (intro/short story): <strong>AIR</strong> = Acknowledge, Ignore, Resume. If they say no a second time, say "No problem, just really quick, do you have (two competitor options)?" and then wish them a great day.<br><strong>Late</strong> (presentation/close): <strong>FFF</strong> = Feel, Felt, Found: "I understand how you feel. Previous customers felt the same way, but what they found was…"</div>
+<details><summary>Objection triangle</summary><ol><li><strong>Acknowledge:</strong> "I completely understand how you feel." / "I hear what you're saying."</li><li><strong>Overcome:</strong> offer a solution. "Here's what I can do for you…"</li><li><strong>Resume:</strong> "With that being said…"</li></ol></details>
+<details><summary>Wireless objections</summary><div class="sc"><table>
+<tr><th>Customer says</th><th>Type</th><th>Response</th></tr>
+<tr><td>I'm in a contract</td><td>Early</td><td>"That's exactly why I'm here." Clarify it's an agreement for the phones and ask how long ago.</td></tr>
+<tr><td>I've seen it before</td><td>Early</td><td>"Great! Our promotions change often. Really quickly, who do you have for wireless?"</td></tr>
+<tr><td>I've been with them for years</td><td>Early</td><td>"We appreciate your loyalty." Ask phone, cost, unlimited data, then move to the value statement.</td></tr>
+<tr><td>Not today</td><td>Early</td><td>"We have great promotions only for today. Really quick, who do you have?"</td></tr>
+<tr><td>You can't beat my price</td><td>Early</td><td>"That's exactly why I'm here. AT&amp;T recently lowered prices." Ask phone and cost, then value statement.</td></tr>
+<tr><td>Don't have phones, account number, or PIN with me</td><td>Early</td><td>Explain: nothing changes today. Order now, phones ship to their home, and the leave-behind walks them through switching numbers.</td></tr>
+<tr><td>Need to talk to everyone on the plan</td><td>Late</td><td>Confirm you're speaking with the decision maker. If not, call them now. Get buy-in at the point of sale and watch body language.</td></tr>
+<tr><td>Too good to be true / what's the catch?</td><td>Late</td><td>"In store today we have promotions you may not get elsewhere."</td></tr>
+<tr><td>I heard the coverage wasn't good</td><td>Late</td><td>AT&amp;T voted fastest and most reliable network 2 years in a row. FirstNet runs on AT&amp;T.</td></tr>
+</table></div></details>
+<details><summary>Internet objections</summary><div class="sc"><table>
+<tr><th>Customer says</th><th>Type</th><th>Response</th></tr>
+<tr><td>In a hurry / too busy</td><td>Early</td><td>"No problem, just quick, do you have Xfinity or Spectrum?"</td></tr>
+<tr><td>I already have you</td><td>Early</td><td>"Thank you for having us! Do you currently use AT&amp;T Fiber?"</td></tr>
+<tr><td>Apartment may not allow dishes</td><td>Early</td><td>"No worries, let me check other services." Check internet and switch to AT&amp;T TV options.</td></tr>
+<tr><td>I have a bundle</td><td>Early</td><td>"Great! We have bundles too." Check the address. If no internet, break down their bill to show savings.</td></tr>
+<tr><td>Don't want a two-year contract</td><td>Late</td><td>We lower and protect pricing. Be upfront about second-year increases. No price increase for AT&amp;T TV.</td></tr>
+<tr><td>Satellite goes out in rain</td><td>Late</td><td>DIRECTV has 99% signal reliability, confirmed before install. No install if reliability isn't there.</td></tr>
+<tr><td>I'm moving soon</td><td>Late</td><td>Within 30 days: set up at the new address. After 30 days: call AT&amp;T Fiber before the move to check costs. A free move can't be guaranteed.</td></tr>
+<tr><td>Need to think about it</td><td>Late</td><td>Review the side-by-side presentation, then transition to the close.</td></tr>
+<tr><td>Need to ask my spouse</td><td>Late</td><td>Call them now. If unreachable, review the package, and leave your number and info for them.</td></tr>
+<tr><td>Don't want to run credit</td><td>Late</td><td>Most companies do. It verifies identity and standing. Ask if there's a specific reason.</td></tr>
+<tr><td>Credit issues / deposit</td><td>Late</td><td>Continue the close and state upfront fees with confidence. If needed, another adult (18+) in the household may sign up, <strong>with that person's consent before running credit</strong>.</td></tr>
+</table></div></details>
+
+<h2>Customer types (BOLT)</h2>
+<div class="two">
+<div class="card"><strong>Bull</strong> <span class="tag">direct</span><p class="mute">Results oriented, wants no small talk, may seem rude because they don't want to be sold to.</p><ul><li>Mirror their energy, stay calm</li><li>High indifference, be transparent</li><li>Move fast, limit story and Jones</li></ul></div>
+<div class="card"><strong>Owl</strong> <span class="tag">questions</span><p class="mute">Wants details, stories, and full explanations. Dislikes doubt words and overexcitement.</p><ul><li>High urgency, but steady pace</li><li>Stick to your system</li><li>Stay cool, preempt each step</li></ul></div>
+<div class="card"><strong>Lamb</strong> <span class="tag">agreeable</span><p class="mute">Calm, social, slow to decide, changes their mind.</p><ul><li>Be very clear and directive</li><li>Social first, then business</li><li>Use sense of urgency</li></ul></div>
+<div class="card"><strong>Tiger</strong> <span class="tag">excited</span><p class="mute">Loves a deal, decides fast, few objections. Future talk shows high impulse.</p><ul><li>Go straight to the hard close</li><li>Use fear of loss</li><li>Check they qualify</li></ul></div>
+</div>
+</section>
+
+<section id="t5">
+<h2>8 great work habits</h2>
+<div class="card"><ol>
+<li><strong>Have and maintain a great attitude.</strong> Take rejection in stride.</li>
+<li><strong>Be on time.</strong> Early is on time.</li>
+<li><strong>Be prepared.</strong> Plan for every situation.</li>
+<li><strong>Work a full day.</strong> Follow through until success.</li>
+<li><strong>Work your store/department correctly.</strong> Read the weekly ad to find "hot spots."</li>
+<li><strong>Respect the customer and client.</strong> Stay positive, never criticize.</li>
+<li><strong>Understand your opportunity.</strong> Know your purpose.</li>
+<li><strong>Take control.</strong> Of the situation, the outcome, and your future.</li></ol></div>
+
+<h2>Impulse factors</h2>
+<div class="sc"><table>
+<tr><th>Factor</th><th>Meaning</th><th>How to use it</th></tr>
+<tr><td>Fear of loss</td><td>Feeling of missing out</td><td>Build value in who you are and what you offer today.</td></tr>
+<tr><td>Sense of urgency</td><td>Time sensitivity</td><td>Keep it moving: "We'll do this right now." Use KISS and QTQP.</td></tr>
+<tr><td>Jones effect</td><td>Wanting what others have</td><td>Reference people you've already helped. The most powerful factor.</td></tr>
+<tr><td>Indifference</td><td>Makes it their decision</td><td>Stay relaxed, not "salesy." "No big deal!"</td></tr>
+</table></div>
+
+<h2>Power words vs. doubt words</h2>
+<div class="two">
+<div class="card"><strong>Use</strong><br>Perfect, Awesome, Great, Excellent, Super</div>
+<div class="card"><strong>Avoid</strong><br>Maybe, perhaps, I think, can we, not sure, possibly, around, "umm"</div>
+</div>
+
+<h2>STOP sign cues</h2>
+<div class="card">When you hear or see these, stop and move to the next step: Just moved, Reverse Jones, Service-based questions, "Oh wow, really?", Love/Hate, Body language, Silence, Future talk.</div>
+
+<h2>Theories</h2>
+<details><summary>Swan, Bumble Bee, QVC</summary><ul><li><strong>Swan:</strong> stay calm in front of customers, even if you don't know the answer. They feed off your energy. If unsure, say you'll "quickly verify with my manager."</li><li><strong>Bumble Bee:</strong> know and sell all products to all types of people.</li><li><strong>QVC:</strong> use all your impulse factors with every customer throughout the pitch.</li></ul></details>
+<details><summary>Bamboo, Gumball, Law of Averages, Bullet</summary><ul><li><strong>Bamboo:</strong> bamboo grows roots for years, then sprouts 90 feet in weeks. Build your foundation first.</li><li><strong>Gumball:</strong> invest all your time in one machine. Replicate your system and do the ordinary extraordinarily.</li><li><strong>Law of Averages:</strong> the more customers you talk to, the more likely you close.</li><li><strong>Bullet:</strong> have a prepared answer for every objection. Don't reveal every promotion at once. Hold one back (such as a gift card) for a customer who hasn't committed.</li></ul></details>
+<details><summary>KISS and KILL</summary><p><strong>KISS</strong> (Keep It Short &amp; Simple): hit the key points and close. <strong>KILL</strong> (Keep It Long &amp; Lengthy): not our standard. For customers with more lines, or who need extra time, slow down and be patient, but don't push them into feeling cornered.</p></details>
+
+<h2>Abbreviations</h2>
+<div class="sc"><table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>AIR</td><td>Acknowledge, Ignore, Resume</td></tr>
+<tr><td>FFF</td><td>Feel, Felt, Found</td></tr>
+<tr><td>RRR</td><td>Repeat, Reassure, Resume</td></tr>
+<tr><td>BEAST</td><td>Body language, Eye contact, Awesome attitude, Smile, Tonality</td></tr>
+<tr><td>CPR</td><td>Create Personal Relationships</td></tr>
+<tr><td>FORDS</td><td>Family, Occupation, Recreation, Dreams, School/Sports</td></tr>
+<tr><td>QTQP</td><td>Quality Time with Quality People</td></tr>
+<tr><td>KISS</td><td>Keep It Short &amp; Simple</td></tr>
+<tr><td>TC</td><td>Take Control</td></tr>
+<tr><td>TTT</td><td>That's why I'm here, That's the best part, That's why everyone's switching</td></tr>
+<tr><td>LOA</td><td>Daily goal metric (see your Team Leader)</td></tr>
+<tr><td>DM</td><td>Decision maker</td></tr>
+</table></div>
+</section>
+</main>
+<script>
+var items=[
+["Check email: e-sign the Arbitration Agreement",""],
+["Check email: sign the DocuSign",""],
+["Resource Vault: search your email, reset your passcode, open Learn","Watch every section: AT&T EDM, CIDNI, Fraud, Do's &amp; Don'ts, Broadband. Click every Complete button and score 100% on the Do's &amp; Don'ts quiz."],
+["Walmart/Scyntilla: search your email, reset your passcode","Upload your picture ID and watch the 8 short videos."],
+["Attend Zoom training Tuesday at 1 pm","Same link on Tuesday and Wednesday."],
+["Best Buy: reset your passcode when the link arrives (Tue, 3–4 pm)","Then complete the training videos using the Best Buy link below."],
+["Costco quiz","Complete in the field with your leader."],
+["Fill out your Goals Sheet and Entry Level Study Guide","Study guide covers work habits, impulse factors, BEAST, pain buckets, and the 5 steps with their 1st/2nd/3rd fives."],
+["Get your business attire ready","See the dress code on the Schedule &amp; standards tab."],
+["Join and engage in GroupMe",""]
+],KEY="ibc-hub-v1",st={};
+try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){st={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function prog(){var n=items.filter(function(_,i){return st[i]}).length;
+document.getElementById("pb").style.width=(n/items.length*100)+"%";
+document.getElementById("pt").textContent=n+" of "+items.length+" complete"}
+function build(){var h="";items.forEach(function(it,i){h+='<div class="ck"><input type="checkbox" id="c'+i+'"'+(st[i]?" checked":"")+'><label for="c'+i+'">'+it[0]+(it[1]?"<small>"+it[1]+"</small>":"")+"</label></div>"});
+var el=document.getElementById("cl");el.innerHTML=h;
+items.forEach(function(_,i){document.getElementById("c"+i).onchange=function(e){st[i]=e.target.checked;save();prog()}});prog()}
+document.getElementById("rs").onclick=function(){st={};save();build()};
+build();
+var tabs=document.querySelectorAll("nav button");
+tabs.forEach(function(b){b.onclick=function(){tabs.forEach(function(x){x.setAttribute("aria-selected",x===b)});
+document.querySelectorAll("section").forEach(function(s){s.classList.toggle("on",s.id===b.dataset.t)});window.scrollTo(0,0)}});
+</script>
+</body></html>
